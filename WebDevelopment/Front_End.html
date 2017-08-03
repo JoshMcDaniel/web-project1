@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="keywords" content="HTML5, CSS3, JavaScript, Web, Development, Developer, front, back, end, client, server, side"/>
+		<meta name="author" content="Josh McDaniel"/>
+		<meta name="description" content="In this assignment I will explain web development while working on my web development skills"/>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="WebDevelopment.css" />
+		<title>Front-End Web Development</title>
+
+	<!-- Div for the images to drop into -->	
+	<style>
+	#div1 {width:125px;height:75px;padding:10px;border:1px solid #aaaaaa;}
+	</style>
+		
+	<script>
+		function allowDrop(ev)
+			{
+				ev.preventDefault();
+			}
+
+		function drag(ev)
+			{
+				ev.dataTransfer.setData("Text",ev.target.id);
+			}
+
+		function drop(ev)
+			{
+				var data=ev.dataTransfer.getData("Text");
+				ev.target.appendChild(document.getElementById(data));
+				ev.preventDefault();
+			}
+	</script>
+	
+	</head>
+	<body>		
+		<!-- Responsive Navbar -->
+		<nav>
+		  <label for="drop" class="toggle">Menu</label>
+		  <input type="checkbox" id="drop" />
+		  <ul class="menu">
+			<li><a href="WebDevelopment.html">Home</a></li>
+			<li><a href="HTML_CSS.html">HTML/CSS</a></li>
+			<li><a href="JavaScript.html">JavaScript</a></li>
+			<li><a href="Front_End.html">Front End</a></li>
+			<li><a href="Back_End.html">Back End</a></li>
+			<li><a href="Form.html">Sign Up</a></li>
+		  </ul>
+		</nav>
+		<header>
+			<!-- Banner Image -->
+			<img src="Images/banner.png" alt="How to become a Web Developer" class="hdrimg" />
+		</header>	
+		<!-- Main content of my webpage -->
+		<main>		
+			<!-- Topic Image -->
+			<img src="Images/front.png" alt="Front End Web Development" class="floatrightimg" />
+			<article>
+				<h2>Front End (Client-Side)</h2>
+				<p>
+				The front end of web development consists of creating the look and feel of portion of the website that the client will use and interact with.
+				This is where the term "client-side" comes from. Typically, when developing the front end of a website, the developer will use a combination of HTML, CSS and JavaScript
+				to design the content, layout and interactivity. The goal of a front end developer is to create an appealing webpage that is both easy to use 
+				and functional for the needs of the client. Click on the logos below to learn more!
+				</p>
+			</article>				
+			<!-- Drag and Drop Example -->
+			<section id="spacing">
+				<h3>Drag and Drop</h3>
+				<p>Want to see the Trifecta in action? Drag the Trifecta image back and forth between the two boxes.
+				<br>This is an example of the HTML5 API <strong>Drag and Drop</strong>.</p>				
+				<!-- Drag and Drop event -->
+				<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				<br />
+				<img id="drag1" src="Images/dragdrop.jpg" alt="Trifecta Drag & Drop Image" draggable="true" ondragstart="drag(event)" width="100" height="50" />
+			</section>			
+			<!-- Logo Images -->
+			<a href="https://www.w3schools.com/html/html5_intro.asp">
+				<img src="Images/HTML5_Logo.png" alt="HTML5 Logo" class="client_logos" />
+			</a>
+			<a href="https://www.w3schools.com/css/css3_intro.asp">
+				<img src="Images/css3.png" alt="CSS3 Logo" class="client_logos" />
+			</a>
+			<a href="https://www.w3schools.com/js/">
+				<img src="Images/javascript.png" alt="JavaScript Logo" class="client_logos" />
+			</a>			
+		</main>		
+			<!-- A line that separates content from the footer -->
+			<hr>		
+			<!-- My information -->
+		<footer>
+			&copy; 2017 Josh McDaniel
+		</footer>				
+	</body>
+</html>

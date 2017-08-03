@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="keywords" content="HTML5, CSS3, JavaScript, Web, Development, Developer, front, back, end, client, server, side"/>
+		<meta name="author" content="Josh McDaniel"/>
+		<meta name="description" content="In this assignment I will explain web development while working on my web development skills"/>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="WebDevelopment.css" />
+		<title>Sign-Up</title>
+	</head>
+	<body>		
+		<!-- Responsive Navbar -->
+		<nav>
+		  <label for="drop" class="toggle">Menu</label>
+		  <input type="checkbox" id="drop" />
+		  <ul class="menu">
+			<li><a href="WebDevelopment.html">Home</a></li>
+			<li><a href="HTML_CSS.html">HTML/CSS</a></li>
+			<li><a href="JavaScript.html">JavaScript</a></li>
+			<li><a href="Front_End.html">Front End</a></li>
+			<li><a href="Back_End.html">Back End</a></li>
+			<li><a href="Form.html">Sign Up</a></li>
+		  </ul>
+		</nav>
+		<header>
+			<!-- Banner Image -->
+			<img src="Images/banner.png" alt="How to become a Web Developer" class="hdrimg" />
+		</header>		
+		<!-- Main content of my webpage -->
+		<main>
+			<article>			
+				<h2 class="center">Sign-Up for more Web Development Information</h2>
+				<p>
+				As Web Developers, we are always trying to learn more. 
+				By filling out this Sign-Up form, you can recieve web development related news, information and even job listings via email.
+				Another reason to sign-up is to network with us and other Web Developers across the world which is extremely valuable in this industry.
+				Please take a few minutes and fill out the form below to start or further your Web Development career!
+				</p>
+			</article>
+			<!-- Begin Form -->
+			<form autocomplete="on"
+				method="post"
+				action="http://ss1.ciwcertified.com/cgi-bin/process.pl">
+				<!-- Personal Information -->
+				<fieldset name="personal_info">
+				<legend>Personal Information</legend>
+					<p class="required">
+					<label for="firstname">First Name: </label><input type="text" name="FirstName" id="firstname" size="40" maxlength="40" placeholder="example: John" autofocus required/>
+					</p>
+					<p class="required">
+					<label for="lastname">Last Name: </label><input type="text" name="LastName" id="lastname" size="40" maxlength="40" placeholder="example: Smith" required/>
+					</p>
+					<p class="required">					
+					<label for="email">Email: </label><input type="email" name="Email" id="email" size="40" maxlength="40" placeholder="example: johnsmith@gmail.com" pattern="^.+@.+$" required/>					
+					</p>
+					<p class="required">					
+					<label for="password">Password: </label><input type="password" name="Password" id="password" size="40" maxlength="40" placeholder="must contain at least 8 characters" pattern=".{8,}" required/>					
+					</p>
+					<p>
+					<label for="tel">Phone Number: </label><input type="tel" name="tel" id="tel" maxlength="20" size="12" placeholder="(123)456-7890" pattern="^[0-9\-\+\s\(\)]*$" />
+					<p>
+					<label for="dob">Date of Birth: </label><input type="text" name="dob" id="dob" size="12" maxlength="12" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="dd/mm/yyyy" required/>
+					</p>
+					Where are you from? Your Continent: 
+					<input list="continents" name="continent" placeholder="Type or select from list" maxlength="13"> 
+					<datalist id="continents"> 
+						<option value="North America"> 
+						<option value="South America"> 
+						<option value="Europe"> 
+						<option value="Asia"> 
+						<option value="Africa"> 
+						<option value="Australia"> 
+						<option value="Antarctica"> 
+					</datalist> 
+					<br>
+					<p>
+					Years of Web Development Experience: <input type="number" name="experience" id="experience" min="0" max="40" value="20">					
+					</p>
+					<p>
+					<label for="url">Have you already created a website? Share one with us! </label><input type="url" name="url" maxlength="150" id="url" placeholder="copy & paste URL" pattern="https?://.+" />
+					</p>
+					<p>
+					Upload an image to be used as your profile picture:<br>
+					<em>(Image files only)</em><br>
+					<input type="file" name="pic" accept="image/*" >
+					</p>
+				</fieldset>
+				<br>
+				<!-- Web Info -->
+				<fieldset name="web_info">
+				<legend>Web Information</legend>
+					<p>
+					Which Web Development topics would you like to receive information about?<br> 
+					(Check all that apply)
+					<br>
+						<input type="checkbox" name="WebNews" id="news"/><label for="news">News</label><br>
+						<input type="checkbox" name="WebInfo" id="info"/><label for="info">Information</label><br>
+						<input type="checkbox" name="JobListings" id="jobs"/><label for="jobs">Job Listings</label><br> 
+					</p>
+					<p>
+					Would you like E-Mail updates on Web Development related degrees and certificates?
+					<br>
+					<input type="radio" name="EmailUpdates" value="yes" checked="checked" id="yes"/><label for="yes">Yes</label> 
+					<input type="radio" name="EmailUpdates" value="no" id="no"/><label for="no">No</label>
+					</p>
+					<p>
+					Which types of education would you like to receive information about?<br> 
+					(Hold Ctrl to select multiple options)
+					<br>
+					<select name="EduInterest" multiple="multiple" size="2" id="interest">
+						<option>Tips & Tricks</option>
+						<option>Certifications</option>
+						<option>Degrees</option>
+					</select>
+					</p>
+					<p>
+					How often would you like an E-Mail update?
+					<br>
+					<select name="EmailFreq" id="emailfreq">
+						<option>Daily</option>
+						<option>Weekly</option>
+						<option>Monthly</option>
+						<option value="Remove">Never</option>
+					</select>
+					</p>
+				<!-- Feedback -->
+				</fieldset>
+				<br>
+				<fieldset name="feedback">
+				<legend>Feedback</legend>
+					<p>
+					Rate our website!:<br>
+					<em>(poor)</em> 0 <input type="range" name="rating" id="rating" min="1" max="5"/> 5 <em>(great)</em>
+					<p>
+					<label for="feedback">Please provide feedback about our website:</label><br>
+					<textarea name="Feedback" placeholder="Thank you for your feedback! (150 characters max)" cols="40" rows="3" id="feedback" maxlength="150" ></textarea>
+					</p>
+				</fieldset>
+				<br>
+				<p class="center">
+				<button type="submit">Submit Form</button>
+				<button type="reset">Reset Form</button>
+				</p>
+			</form>
+			
+		</main>		
+			<!-- A line that separates content from the footer -->
+			<hr>			
+			<!-- My information -->
+		<footer>
+			&copy; 2017 Josh McDaniel
+		</footer>				
+	</body>
+</html>

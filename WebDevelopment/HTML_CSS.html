@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="keywords" content="HTML5, CSS3, JavaScript, Web, Development, Developer, front, back, end, client, server, side"/>
+		<meta name="author" content="Josh McDaniel"/>
+		<meta name="description" content="In this assignment I will explain web development while working on my web development skills"/>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="WebDevelopment.css" />
+		<title>HTML5/CSS3</title>
+	</head>
+	<body>		
+		<!-- Responsive Navbar -->
+		<nav>
+		  <label for="drop" class="toggle">Menu</label>
+		  <input type="checkbox" id="drop" />
+		  <ul class="menu">
+			<li><a href="WebDevelopment.html">Home</a></li>
+			<li><a href="HTML_CSS.html">HTML/CSS</a></li>
+			<li><a href="JavaScript.html">JavaScript</a></li>
+			<li><a href="Front_End.html">Front End</a></li>
+			<li><a href="Back_End.html">Back End</a></li>
+			<li><a href="Form.html">Sign Up</a></li>
+		  </ul>
+		</nav>
+		<header>
+			<!-- Banner Image -->
+			<img src="Images/banner.png" alt="How to become a Web Developer" class="hdrimg" />
+		</header>	
+		<!-- Main content of my webpage -->
+		<main>		
+			<article>
+				<h2>Hyper Text Markup Language 5 (HTML5)</h2>
+				<p>
+				HTML5 is a powerful tool used to create websites that are more functional while also making them easier to code for the web developer. 
+				One powerful tool used in HTML5 is an Application Programming Interface (API) which allows a website to utilize a program or operating system to perform useful tasks. 
+				Below you will see the Geolocation API which uses your devices GPS to display your current location on s map. 
+				This feature was previously only possible with downloaded applications. This is just one of many new features added with HTML5.  
+				</p>
+			</article>
+			
+			<p class="map" id="demo">Click the button to get your location.</p>
+
+			<button class="map" onclick="getLocation()">My Location</button>
+
+			<div class="mapimg" id="mapholder"></div>
+
+			<script>
+			var x = document.getElementById("demo");
+
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition, showError);
+				} else {
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				}
+			}
+
+			function showPosition(position) {
+				var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+				+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+				document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+			}
+
+			function showError(error) {
+				switch(error.code) {
+					case error.PERMISSION_DENIED:
+						x.innerHTML = "User denied the request for Geolocation."
+						break;
+					case error.POSITION_UNAVAILABLE:
+						x.innerHTML = "Location information is unavailable."
+						break;
+					case error.TIMEOUT:
+						x.innerHTML = "The request to get user location timed out."
+						break;
+					case error.UNKNOWN_ERROR:
+						x.innerHTML = "An unknown error occurred."
+						break;
+				}
+			}
+			</script>
+			
+			<article>
+				<h2>Cascading Style Sheet 3 (CSS3)</h2>
+					<p>
+					CSS3 adds many amazing syle features to websites that were once only possible with complex JavaScript code. 
+					Some new features include rounded corners for boxes or images, shadowing (as seen in this webpage text), and animation just to name a few.
+					Below you will see the animation feature in action which will alter the size of an image as your cursor hovers over it. Give it a try!
+					</p>
+			</article>	
+			<img src="Images/balloon.png" alt="Blue Balloon" class="balloon" />
+		</main>		
+			<!-- A line that separates content from the footer -->
+			<hr>		
+			<!-- My information -->
+		<footer>
+			&copy; 2017 Josh McDaniel
+		</footer>				
+	</body>
+</html>
